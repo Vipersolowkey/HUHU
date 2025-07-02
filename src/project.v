@@ -15,7 +15,10 @@ module tt_um_asiclab_example (
     input  reg        clk,      // clock
     input  reg        rst_n     // reset_n - low to reset
 );
-
+wire reset =-rst_n;
+    assign uio_out=0;
+    assign uio_oe =0;
+    wire _unuse =&(ena.uio_in, 1'b0);
   always @(posedge clk or posedge reset) begin
     if (reset) begin
         uo_out <= 0;
