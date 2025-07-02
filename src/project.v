@@ -19,8 +19,8 @@ module tt_um_asiclab_example (
     wire reset = ~rst_n;
 
     // Disable IOs (tri-state)
-    assign uio_out = 8'b0;
-    assign uio_oe  = 8'b0;
+    assign uio_out = 0;
+    assign uio_oe  = 0;
 
     always @(posedge clk or posedge reset) begin
         if (reset) begin
@@ -30,8 +30,6 @@ module tt_um_asiclab_example (
             uo_out[7:4] <= 4'b0;
         end
     end
-
-    // Unused signals grouped to avoid warnings
     wire _unused;
     assign _unused = &{ena, uio_in, clk};
 
