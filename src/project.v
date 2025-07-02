@@ -29,8 +29,3 @@ wire reset = ~rst_n;
 end
 endmodule
 
-  // Unused signals grouped to avoid warnings
-  wire _unused;
-  assign _unused = &{ena, clk, rst_n, 1'b0};
-
-endmodule
